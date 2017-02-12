@@ -86,6 +86,7 @@ SYNOPSYSLEN=`echo $SYNOPSYSLEN | awk '{print int($0*30)}0'`
 
 echo "Making the Movie Intro"
 
-/home/pi/mlt-framework/mlt-master/src/melt/melt $DATADIR/RNDIMG/.all.jpg in=0 out=$SYNOPSYSLEN ttl=75 -attach crop center=1 -attach affine transition.cycle=225 transition.geometry="0=0/0:100%x100%;74=-100/-100:120%x120%;75=-60/-60:110%x110%;149=0/0:110%x110%;150=0/-60:110%x110%;224=-60/0:110%x110%" -filter luma cycle=75 duration=25 -track $DATADIR/synopsis.wav -transition mix -consumer avformat:$DATADIR/movie_intro.mp4 vcodec=libx264 acodec=aac 
-#melt $DATADIR/RNDIMG/.all.jpg in=0 out=$SYNOPSYSLEN ttl=75 -attach crop center=1 -attach affine transition.cycle=225 transition.geometry="0=0/0:100%x100%;74=-100/-100:120%x120%;75=-60/-60:110%x110%;149=0/0:110%x110%;150=0/-60:110%x110%;224=-60/0:110%x110%" -filter luma cycle=75 duration=25 -track $DATADIR/synopsis.wav -transition mix -consumer avformat:$DATADIR/movie_intro.mp4 vcodec=libx264 acodec=aac 
- 
+/home/pi/RO/melt $DATADIR/RNDIMG/.all.jpg in=0 out=$SYNOPSYSLEN ttl=75 -attach crop center=1 -attach affine transition.cycle=225 transition.geometry="0=0/0:100%x100%;74=-100/-100:120%x120%;75=-60/-60:110%x110%;149=0/0:110%x110%;150=0/-60:110%x110%;224=-60/0:110%x110%" -filter luma cycle=75 duration=25 -track $DATADIR/synopsis.wav -transition mix -consumer avformat:$DATADIR/movie_intro.mp4 vcodec=libx264 acodec=aac 
+
+echo "Movie Complete"
+
